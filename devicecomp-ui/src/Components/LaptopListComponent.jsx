@@ -4,12 +4,14 @@
 import React, { Component } from "react";
 import LaptopService from "../Services/LaptopService";
 
+
 class LaptopListComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
       laptops: [],
-    };
+    }
+    this.addLaptop = this.addLaptop.bind(this);
   }
 
   //every time a component is mounted with a service this should be specified.
@@ -20,12 +22,17 @@ class LaptopListComponent extends Component {
     });
   }
 
+  addLaptop(){
+    this.props.history.push('/laptop-add')
+  }
+
   render() {
     return (
       <div>
         <h2 className="text-center">Laptop List</h2>
         {/* check what this classname is used for--> */}
         <div className="row">
+          <button className="btn btn-primary" onClick={this.addLaptop}> Add Laptops </button>
           <table className="table table-striped table-bordered">
             <thead>
               <tr>

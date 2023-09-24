@@ -1,4 +1,5 @@
 import "./App.css";
+import CreateLaptopComponent from "./Components/CreateLaptopComponent";
 import FoooterComponent from "./Components/FoooterComponent";
 import HeaderComponent from "./Components/HeaderComponent";
 import LaptopListComponent from "./Components/LaptopListComponent";
@@ -8,16 +9,16 @@ function App() {
   return (
     <div>
       <Router>
+        <HeaderComponent />
         <div className="container">
-          <HeaderComponent />
-          <div className="container">
-            <Routes>
-              <Route path="/" element={<LaptopListComponent />} />
-              <Route path="/getall" element={<LaptopListComponent />} />
-            </Routes>
-          </div>
-          <FoooterComponent />
+          <Routes>
+            {/* switch tags have been depracated */}
+            <Route path="/" exact element={<LaptopListComponent />} />
+            <Route path="/laptop-getall" element={<LaptopListComponent />} />
+            <Route path="/laptop-add" element={<CreateLaptopComponent />} />
+          </Routes>
         </div>
+        <FoooterComponent />
       </Router>
     </div>
   );
