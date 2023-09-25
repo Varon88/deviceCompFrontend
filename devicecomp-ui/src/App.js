@@ -17,7 +17,10 @@ function App() {
             <Route path="/" exact element={<LaptopListComponent />} />
             <Route path="/laptop-getall" element={<LaptopListComponent />} />
             <Route path="/laptop-add" element={<CreateLaptopComponent />} />
-            <Route path="/laptop-edit/:id" element={<UpdateLaptopComponent />} />
+            <Route
+              path="/laptop-edit/:id"
+              element={<UpdateLaptopComponent />}
+            />
           </Routes>
         </div>
         <FoooterComponent />
