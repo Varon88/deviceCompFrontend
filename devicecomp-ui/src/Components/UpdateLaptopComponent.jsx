@@ -13,6 +13,14 @@ const UpdateLaptopComponent = () => {
   const [laptopReleaseDate, setLaptopReleaseDate] = useState("");
   const navigate = useNavigate();
 
+  // this.state = {id: this.props.match.params.id}
+
+  // // useEffect(() => {
+  // //   laptopService.getById(this.state).then((res) => {
+  // //     setLaptop(res.data);
+  // //   });
+  // // }, [id]);
+
   const updateLaptop = (event) => {
     event.preventDefault();
 

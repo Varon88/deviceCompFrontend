@@ -11,6 +11,10 @@ class LaptopService {
   createLaptops(laptop) {
     return axios.post(LAPTOPS_API_BASE_URL + "add", laptop);
   }
+
+  getById(id) {
+    return axios.post(LAPTOPS_API_BASE_URL + "getById/" + id);
+  }
 }
 
 // updateEmployee(laptop,id){

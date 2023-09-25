@@ -110,11 +110,12 @@ const LaptopListComponent = () => {
   return (
     <div>
       <h2 className="text-center">Laptop List</h2>
-
       <div className="row">
         <button className="btn btn-primary" onClick={addLaptop}>
           Add Laptops
         </button>
+      </div>
+      <div className="row">
         <table className="table table-striped table-bordered">
           <thead>
             <tr>
@@ -129,7 +130,6 @@ const LaptopListComponent = () => {
               <th>Actions</th>
             </tr>
           </thead>
-
           <tbody>
             {laptops.map((laptops) => (
               <tr key={laptops.id}>
