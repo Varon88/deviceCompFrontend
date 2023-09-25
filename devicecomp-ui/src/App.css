@@ -47,23 +47,8 @@
   color: white;
 }
 
-/* Add a margin-bottom to the table. */
 .table {
   margin-bottom: 60px;
 }
 
-/* Use a CSS grid layout. */
-/* .body {
-  display: grid;
-  grid-template-columns: 1fr;
-} */
-
-/* .table {
-  grid-area: 1 / 1;
-} */
-
-/* Use the z-index property to position the table above the footer. */
-/* .table {
-  z-index: 1;
-} */
 

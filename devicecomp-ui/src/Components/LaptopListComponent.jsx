@@ -97,6 +97,10 @@ const LaptopListComponent = () => {
     navigate("/laptop-add");
   };
 
+  const editLaptop = (id) => {
+    navigate(`/laptop-edit/${id}`);
+  };
+
   React.useEffect(() => {
     LaptopService.getLaptops().then((res) => {
       setLaptops(res.data);
@@ -122,6 +126,7 @@ const LaptopListComponent = () => {
               <th>laptopPrice</th>
               <th>laptopUseCondition</th>
               <th>laptopReleaseDate</th>
+              <th>Actions</th>
             </tr>
           </thead>
 
@@ -136,6 +141,14 @@ const LaptopListComponent = () => {
                 <td>{laptops.price}</td>
                 <td>{laptops.useCondition}</td>
                 <td>{laptops.releaseDate}</td>
+                <td>
+                  <button
+                    onClick={() => editLaptop(laptops.id)}
+                    className="btn btn-info"
+                  >
+                    Update
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>

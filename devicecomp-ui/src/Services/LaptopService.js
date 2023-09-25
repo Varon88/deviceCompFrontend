@@ -13,6 +13,10 @@ class LaptopService {
   }
 }
 
+// updateEmployee(laptop,id){
+//   return axios.put(LAPTOPS_API_BASE_URL + "update/:id",laptop)
+// }
+
 const laptopService = new LaptopService(); // Create an instance of LaptopService
 
 export default laptopService;
