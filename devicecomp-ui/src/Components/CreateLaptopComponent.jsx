@@ -121,6 +121,7 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import laptopService from "../Services/LaptopService";
 
 const CreateLaptopComponent = () => {
   const [laptopName, setLaptopName] = useState("");
@@ -147,8 +148,12 @@ const CreateLaptopComponent = () => {
       releaseDate: laptopReleaseDate,
     };
 
-    // TODO: Save the laptop object to the database
-    console.log("laptop =>" + JSON.stringify(laptop));
+    laptopService
+      .createLaptops(laptop)
+      .then(() => {
+        navigate("/laptop-getall");
+      })
+      .catch((err) => console.log(err));
   };
 
   const cancel = () => {

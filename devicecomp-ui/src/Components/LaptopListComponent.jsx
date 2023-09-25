@@ -4,7 +4,6 @@
 // import React, { Component, useState, useNavigate } from "react";
 // import LaptopService from "../Services/LaptopService";
 
-
 // class LaptopListComponent extends Component {
 //   constructor(props) {
 //     super(props);
@@ -86,18 +85,16 @@ Overall, this constructor is preparing the component to receive and manage data 
 
 //the above version of code is non functional due to the fact that it a class component and not a functional component hence not being able to use the useNavigate function which is the new version of the "this.props.history-push('/add-employee');".
 
-
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import LaptopService from "../Services/LaptopService";
 
 const LaptopListComponent = () => {
   const [laptops, setLaptops] = useState([]);
   const navigate = useNavigate();
 
-
   const addLaptop = () => {
-    navigate('/laptop-add');
+    navigate("/laptop-add");
   };
 
   React.useEffect(() => {
