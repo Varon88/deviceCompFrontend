@@ -24,6 +24,18 @@ const UpdateLaptopComponent = () => {
   const updateLaptop = (event) => {
     event.preventDefault();
 
+    //use laptop service and use the below lines and file in the state by extracting data from the returned object.
+
+    //   const [laptopName, setLaptopName] = useState("");
+    // const [laptopStorage, setLaptopStorage] = useState("");
+    // const [laptopManufacturer, setLaptopManufacturer] = useState("");
+    // const [laptopModel, setLaptopModel] = useState("");
+    // const [laptopSpecs, setLaptopSpecs] = useState("");
+    // const [laptopPrice, setLaptopPrice] = useState("");
+    // const [laptopUseCondition, setLaptopUseCondition] = useState("");
+    // const [laptopReleaseDate, setLaptopReleaseDate] = useState("");
+    // const navigate = useNavigate();
+
     const laptop = {
       name: laptopName,
       storage: laptopStorage,
