@@ -5,6 +5,7 @@ import HeaderComponent from "./Components/HeaderComponent";
 import LaptopListComponent from "./Components/LaptopListComponent";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; //used to establish routing; required to run command npm install react-router-dom
 import UpdateLaptopComponent from "./Components/UpdateLaptopComponent";
+import DeleteLaptopComponent from "./Components/DeleteLaptopComponent";
 
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
             <Route
               path="/laptop-edit/:id"
               element={<UpdateLaptopComponent />}
+            />
+            <Route
+              path="/laptop-delete/:id"
+              element={<DeleteLaptopComponent />}
             />
           </Routes>
         </div>

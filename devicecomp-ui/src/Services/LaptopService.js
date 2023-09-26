@@ -19,6 +19,10 @@ class LaptopService {
   updateLaptop(laptop, id) {
     return axios.put(`${LAPTOPS_API_BASE_URL}update/${id}`, laptop);
   }
+
+  deleteLaptop(id) {
+    return axios.delete(`${LAPTOPS_API_BASE_URL}delete/${id}`);
+  }
 }
 
 const laptopService = new LaptopService(); // Create an instance of LaptopService

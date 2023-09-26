@@ -102,6 +102,10 @@ const LaptopListComponent = () => {
     navigate(`/laptop-edit/${id}`);
   };
 
+  const deleteLaptop = (id) => {
+    navigate(`/laptop-delete/${id}`);
+  };
+
   React.useEffect(() => {
     LaptopService.getLaptops().then((res) => {
       setLaptops(res.data);
@@ -151,6 +155,12 @@ const LaptopListComponent = () => {
                     className="btn btn-info"
                   >
                     Update
+                  </button>
+                  <button
+                    onClick={() => deleteLaptop(laptops.id)}
+                    className="btn btn-danger"
+                  >
+                    Delete
                   </button>
                 </td>
               </tr>
