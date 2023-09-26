@@ -13,11 +13,11 @@ class LaptopService {
   }
 
   getById(id) {
-    return axios.post(`${LAPTOPS_API_BASE_URL}/getById/${id}`);
+    return axios.get(`${LAPTOPS_API_BASE_URL}getById/${id}`);
   }
 
-  updateEmployee(laptop, id) {
-    return axios.put(`${LAPTOPS_API_BASE_URL}/update/${id}`, laptop);
+  updateLaptop(laptop, id) {
+    return axios.put(`${LAPTOPS_API_BASE_URL}update/${id}`, laptop);
   }
 }
 

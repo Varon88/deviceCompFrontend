@@ -85,13 +85,14 @@ Overall, this constructor is preparing the component to receive and manage data 
 
 //the above version of code is non functional due to the fact that it a class component and not a functional component hence not being able to use the useNavigate function which is the new version of the "this.props.history-push('/add-employee');".
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import LaptopService from "../Services/LaptopService";
 
 const LaptopListComponent = () => {
   const [laptops, setLaptops] = useState([]);
   const navigate = useNavigate();
+  const rowRef = useRef();
 
   const addLaptop = () => {
     navigate("/laptop-add");
@@ -119,6 +120,7 @@ const LaptopListComponent = () => {
         <table className="table table-striped table-bordered">
           <thead>
             <tr>
+              {/* <th>laptopId</th> */}
               <th>laptopName</th>
               <th>laptopStorage</th>
               <th>laptopManufacturer</th>
@@ -132,7 +134,9 @@ const LaptopListComponent = () => {
           </thead>
           <tbody>
             {laptops.map((laptops) => (
-              <tr key={laptops.id}>
+              <tr key={laptops.id} ref={rowRef}>
+                {/*key={laptops.id*/}
+                {/* <td>{laptops.id}</td> */}
                 <td>{laptops.name}</td>
                 <td>{laptops.storage}</td>
                 <td>{laptops.manufacturer}</td>

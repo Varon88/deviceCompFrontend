@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import laptopService from "../Services/LaptopService";
 
 const UpdateLaptopComponent = () => {
@@ -12,29 +12,38 @@ const UpdateLaptopComponent = () => {
   const [laptopUseCondition, setLaptopUseCondition] = useState("");
   const [laptopReleaseDate, setLaptopReleaseDate] = useState("");
   const navigate = useNavigate();
+  const { id } = useParams();
 
-  // this.state = {id: this.props.match.params.id}
+  useEffect(() => {
+    laptopService
+      .getById(id)
+      .then((laptop) => {
+        setLaptopName(laptop.data.name);
+        setLaptopStorage(laptop.data.storage);
+        setLaptopManufacturer(laptop.data.manufacturer);
+        setLaptopModel(laptop.data.model);
+        setLaptopSpecs(laptop.data.specs);
+        setLaptopPrice(laptop.data.price);
+        setLaptopUseCondition(laptop.data.useCondition);
+        setLaptopReleaseDate(laptop.data.releaseDate);
+      })
+      .catch((err) => console.log(err));
 
-  // // useEffect(() => {
-  // //   laptopService.getById(this.state).then((res) => {
-  // //     setLaptop(res.data);
-  // //   });
-  // // }, [id]);
+    // let existingLaptop = laptopService.getById(id);
+    // setLaptopName(existingLaptop.name);
+    // setLaptopStorage(existingLaptop.storage);
+    // setLaptopManufacturer(existingLaptop.manufacturer);
+    // setLaptopModel(existingLaptop.model);
+    // setLaptopSpecs(existingLaptop.specs);
+    // setLaptopPrice(existingLaptop.price);
+    // setLaptopUseCondition(existingLaptop.useCondition);
+    // setLaptopReleaseDate(existingLaptop.releaseDate);
+
+    // console.log(existingLaptop);
+  }, [id]);
 
   const updateLaptop = (event) => {
     event.preventDefault();
-
-    //use laptop service and use the below lines and file in the state by extracting data from the returned object.
-
-    //   const [laptopName, setLaptopName] = useState("");
-    // const [laptopStorage, setLaptopStorage] = useState("");
-    // const [laptopManufacturer, setLaptopManufacturer] = useState("");
-    // const [laptopModel, setLaptopModel] = useState("");
-    // const [laptopSpecs, setLaptopSpecs] = useState("");
-    // const [laptopPrice, setLaptopPrice] = useState("");
-    // const [laptopUseCondition, setLaptopUseCondition] = useState("");
-    // const [laptopReleaseDate, setLaptopReleaseDate] = useState("");
-    // const navigate = useNavigate();
 
     const laptop = {
       name: laptopName,
@@ -74,7 +83,7 @@ const UpdateLaptopComponent = () => {
                     name="laptopName"
                     className="form-control"
                     value={laptopName}
-                    onChange={(event) => setLaptopName(event.target.value)}
+                    onChange={(e) => setLaptopName(laptopName)}
                   />
                 </div>
                 <div className="form-group">
@@ -173,3 +182,11 @@ const UpdateLaptopComponent = () => {
 };
 
 export default UpdateLaptopComponent;
+
+// this.state = {id: this.props.match.params.id}
+
+// // useEffect(() => {
+// //   laptopService.getById(this.state).then((res) => {
+// //     setLaptop(res.data);
+// //   });
+// // }, [id]);
