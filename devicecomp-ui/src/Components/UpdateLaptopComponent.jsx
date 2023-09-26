@@ -83,7 +83,7 @@ const UpdateLaptopComponent = () => {
                     name="laptopName"
                     className="form-control"
                     value={laptopName}
-                    onChange={(e) => setLaptopName(laptopName)}
+                    onChange={(event) => setLaptopName(event.target.value)}
                   />
                 </div>
                 <div className="form-group">
