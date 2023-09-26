@@ -57,7 +57,7 @@ const UpdateLaptopComponent = () => {
     };
 
     laptopService
-      .createLaptops(laptop)
+      .updateLaptop(laptop, id)
       .then(() => {
         navigate("/laptop-getall");
       })
