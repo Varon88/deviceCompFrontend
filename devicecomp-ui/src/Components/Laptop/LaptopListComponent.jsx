@@ -87,7 +87,7 @@ Overall, this constructor is preparing the component to receive and manage data 
 
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import LaptopService from "../Services/LaptopService";
+import LaptopService from "../../Services/LaptopService";
 
 const LaptopListComponent = () => {
   const [laptops, setLaptops] = useState([]);

@@ -1,11 +1,11 @@
 import "./App.css";
-import CreateLaptopComponent from "./Components/CreateLaptopComponent";
+import CreateLaptopComponent from "./Components/Laptop/CreateLaptopComponent";
 import FoooterComponent from "./Components/FoooterComponent";
 import HeaderComponent from "./Components/HeaderComponent";
-import LaptopListComponent from "./Components/LaptopListComponent";
+import LaptopListComponent from "./Components/Laptop/LaptopListComponent";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; //used to establish routing; required to run command npm install react-router-dom
-import UpdateLaptopComponent from "./Components/UpdateLaptopComponent";
-import DeleteLaptopComponent from "./Components/DeleteLaptopComponent";
+import UpdateLaptopComponent from "./Components/Laptop/UpdateLaptopComponent";
+import DeleteLaptopComponent from "./Components/Laptop/DeleteLaptopComponent";
 
 function App() {
   return (

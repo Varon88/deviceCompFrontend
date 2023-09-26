@@ -2,18 +2,7 @@
 
 // class CreateLaptopComponent extends Component {
 
-//     constructor(props){
-//         super(props);
-//         this.state = {
-//           name: '',
-//           storage: '',
-//           manufacturer: '',
-//           model: '',
-//           specs: '',
-//           price: '',
-//           useCondition: '',
-//           releaseDate: ''
-//         };
+//     c
 //         this.changeLaptopNameHandler = this.changeLaptopNameHandler.bind(this);
 //         this.changeLaptopStorageHandler = this.changeLaptopStorageHandler.bind(this);
 //         this.changeLaptopManufacturerHandler = this.changeLaptopManufacturerHandler.bind(this);
@@ -121,7 +110,7 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import laptopService from "../Services/LaptopService";
+import laptopService from "../../Services/LaptopService";
 
 const CreateLaptopComponent = () => {
   const [laptopName, setLaptopName] = useState("");

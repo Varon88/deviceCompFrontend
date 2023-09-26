@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import laptopService from "../Services/LaptopService";
+import laptopService from "../../Services/LaptopService";
 
 const DeleteLaptopComponent = () => {
   const [laptopName, setLaptopName] = useState("");
