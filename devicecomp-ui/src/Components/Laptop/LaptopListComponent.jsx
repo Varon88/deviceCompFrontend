@@ -106,6 +106,10 @@ const LaptopListComponent = () => {
     navigate(`/laptop-delete/${id}`);
   };
 
+  const getRecs = () => {
+    navigate("/laptop-recommend");
+  };
+
   React.useEffect(() => {
     LaptopService.getLaptops().then((res) => {
       setLaptops(res.data);
@@ -118,6 +122,11 @@ const LaptopListComponent = () => {
       <div className="row">
         <button className="btn btn-primary" onClick={addLaptop}>
           Add Laptops
+        </button>
+      </div>
+      <div className="row">
+        <button className="btn btn-info" onClick={getRecs}>
+          Get Recommendations
         </button>
       </div>
       <div className="row">

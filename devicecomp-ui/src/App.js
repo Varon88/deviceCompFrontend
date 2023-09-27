@@ -6,6 +6,8 @@ import LaptopListComponent from "./Components/Laptop/LaptopListComponent";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; //used to establish routing; required to run command npm install react-router-dom
 import UpdateLaptopComponent from "./Components/Laptop/UpdateLaptopComponent";
 import DeleteLaptopComponent from "./Components/Laptop/DeleteLaptopComponent";
+import RecommendLaptopExecuterComponent from "./Components/Laptop/RecommendLaptopExecuterComponent";
+import RecommendLaptopComponent from "./Components/Laptop/RecomendLaptopComponent";
 
 function App() {
   return (
@@ -25,6 +27,14 @@ function App() {
             <Route
               path="/laptop-delete/:id"
               element={<DeleteLaptopComponent />}
+            />
+            <Route
+              path="/laptop-recommend"
+              element={<RecommendLaptopComponent />}
+            />
+            <Route
+              path="/laptop-recommend-exc/:condition/:price/:specs"
+              element={<RecommendLaptopExecuterComponent />}
             />
           </Routes>
         </div>

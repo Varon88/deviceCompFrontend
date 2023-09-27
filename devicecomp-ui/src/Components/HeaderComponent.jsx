@@ -6,7 +6,7 @@ class HeaderComponent extends Component {
       <div>
         <header>
           <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-            <div class="marquee">
+            <div className="marquee">
               <a href="https://github.com/Varon88" className="navbar-brand">
                 SpecsSphere
               </a>

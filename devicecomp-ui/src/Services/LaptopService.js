@@ -23,6 +23,12 @@ class LaptopService {
   deleteLaptop(id) {
     return axios.delete(`${LAPTOPS_API_BASE_URL}delete/${id}`);
   }
+
+  recommendLaptop(condition, price, specs) {
+    return axios.get(LAPTOPS_API_BASE_URL + "getRec", {
+      params: { condition, price, specs },
+    });
+  }
 }
 
 const laptopService = new LaptopService(); // Create an instance of LaptopService
