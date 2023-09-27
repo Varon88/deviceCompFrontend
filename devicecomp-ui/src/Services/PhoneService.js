@@ -24,9 +24,9 @@ class PhoneService {
     return axios.delete(`${PHONES_API_BASE_URL}delete/${id}`);
   }
 
-  recommendPhones(condition, price, specs) {
+  recommendPhones(condition, price, storage) {
     return axios.get(PHONES_API_BASE_URL + "getRec", {
-      params: { condition, price, specs },
+      params: { condition, price, storage },
     });
   }
 }

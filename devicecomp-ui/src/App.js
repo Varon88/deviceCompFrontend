@@ -13,6 +13,8 @@ import CreatePhoneComponent from "./Components/Phones/CreatePhoneComponent";
 import DeletePhoneComponent from "./Components/Phones/DeletePhoneComponent";
 import UpdatePhoneComponent from "./Components/Phones/UpdatePhoneComponent";
 import PhoneListComponent from "./Components/Phones/PhoneListComponent";
+import ReccomendPhonesComponent from "./Components/Phones/RecommendPhoneComponent";
+import RecommendPhoneExecuterComponent from "./Components/Phones/RecommendPhoneExecuterComponent";
 
 function App() {
   return (
@@ -54,11 +56,11 @@ function App() {
             />
             <Route
               path="/phone-recommend"
-              element={<RecommendLaptopComponent />}
+              element={<ReccomendPhonesComponent />}
             />
             <Route
-              path="/phone-recommend-exc/:condition/:price/:specs"
-              element={<RecommendLaptopExecuterComponent />}
+              path="/phone-recommend-exc/:condition/:price/:storage"
+              element={<RecommendPhoneExecuterComponent />}
             />
 
             {/* Phone based routes */}
