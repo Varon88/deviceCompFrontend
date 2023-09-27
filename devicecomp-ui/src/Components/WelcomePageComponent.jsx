@@ -8,7 +8,7 @@ const WelcomePageComponent = () => {
   };
 
   const migrateToPhones = () => {
-    navigate("/laptop-getall");
+    navigate("/phone-getall");
   };
 
   const migrateToSpeakers = () => {

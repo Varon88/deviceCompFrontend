@@ -9,6 +9,10 @@ import DeleteLaptopComponent from "./Components/Laptop/DeleteLaptopComponent";
 import RecommendLaptopExecuterComponent from "./Components/Laptop/RecommendLaptopExecuterComponent";
 import RecommendLaptopComponent from "./Components/Laptop/RecomendLaptopComponent";
 import WelcomePageComponent from "./Components/WelcomePageComponent";
+import CreatePhoneComponent from "./Components/Phones/CreatePhoneComponent";
+import DeletePhoneComponent from "./Components/Phones/DeletePhoneComponent";
+import UpdatePhoneComponent from "./Components/Phones/UpdatePhoneComponent";
+import PhoneListComponent from "./Components/Phones/PhoneListComponent";
 
 function App() {
   return (
@@ -17,7 +21,7 @@ function App() {
         <HeaderComponent />
         <div className="container">
           <Routes>
-            {/* switch tags have been depracated */}
+            {/* Laptop based Routes */}
             <Route path="/" exact element={<WelcomePageComponent />} />
             <Route path="/laptop-getall" element={<LaptopListComponent />} />
             <Route path="/laptop-add" element={<CreateLaptopComponent />} />
@@ -37,6 +41,27 @@ function App() {
               path="/laptop-recommend-exc/:condition/:price/:specs"
               element={<RecommendLaptopExecuterComponent />}
             />
+            {/* Laptop based Routes */}
+
+            {/* Phone based routes */}
+
+            <Route path="/phone-getall" element={<PhoneListComponent />} />
+            <Route path="/phone-add" element={<CreatePhoneComponent />} />
+            <Route path="/phone-edit/:id" element={<UpdatePhoneComponent />} />
+            <Route
+              path="/phone-delete/:id"
+              element={<DeletePhoneComponent />}
+            />
+            <Route
+              path="/phone-recommend"
+              element={<RecommendLaptopComponent />}
+            />
+            <Route
+              path="/phone-recommend-exc/:condition/:price/:specs"
+              element={<RecommendLaptopExecuterComponent />}
+            />
+
+            {/* Phone based routes */}
           </Routes>
         </div>
         <FoooterComponent />
