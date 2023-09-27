@@ -8,6 +8,7 @@ import UpdateLaptopComponent from "./Components/Laptop/UpdateLaptopComponent";
 import DeleteLaptopComponent from "./Components/Laptop/DeleteLaptopComponent";
 import RecommendLaptopExecuterComponent from "./Components/Laptop/RecommendLaptopExecuterComponent";
 import RecommendLaptopComponent from "./Components/Laptop/RecomendLaptopComponent";
+import WelcomePageComponent from "./Components/WelcomePageComponent";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <div className="container">
           <Routes>
             {/* switch tags have been depracated */}
-            <Route path="/" exact element={<LaptopListComponent />} />
+            <Route path="/" exact element={<WelcomePageComponent />} />
             <Route path="/laptop-getall" element={<LaptopListComponent />} />
             <Route path="/laptop-add" element={<CreateLaptopComponent />} />
             <Route
