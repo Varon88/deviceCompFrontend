@@ -12,7 +12,7 @@ const WelcomePageComponent = () => {
   };
 
   const migrateToSpeakers = () => {
-    navigate("/laptop-getall");
+    navigate("/speaker-getall");
   };
 
   return (

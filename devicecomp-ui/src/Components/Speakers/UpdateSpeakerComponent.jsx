@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import phoneService from "../../Services/PhoneService";
+import speakerService from "../../Services/SpeakerService";
 
 const UpdateSpeakerComponent = () => {
-    const [speakerName, setSpeakerName] = useState("");
-    const [speakerManufacturer, setSpeakerManufacturer] = useState("");
-    const [speakerModel, setSpeakerModel] = useState("");
-    const [speakerBatteryCapacity, setSpeakerBatteryCapacity] = useState("");
-    const [speakerUseCondition, setSpeakerUseCondition] = useState("");
-    const [speakerReleaseDate, setSpeakerReleaseDate] = useState("");
-    const navigate = useNavigate();
-    const { id } = useParams();
+  const [speakerName, setSpeakerName] = useState("");
+  const [speakerManufacturer, setSpeakerManufacturer] = useState("");
+  const [speakerModel, setSpeakerModel] = useState("");
+  const [speakerBatteryCapacity, setSpeakerBatteryCapacity] = useState("");
+  const [speakerUseCondition, setSpeakerUseCondition] = useState("");
+  const [speakerReleaseDate, setSpeakerReleaseDate] = useState("");
+  const navigate = useNavigate();
+  const { id } = useParams();
 
   useEffect(() => {
     speakerService
@@ -22,7 +22,7 @@ const UpdateSpeakerComponent = () => {
         setSpeakerModel(speaker.data.model);
         setSpeakerBatteryCapacity(speaker.data.batteryCapacity);
         setSpeakerUseCondition(speaker.data.useCondition);
-        setSpeakerUseCondition(speaker.data.releaseDate);
+        setSpeakerReleaseDate(speaker.data.releaseDate);
       })
       .catch((err) => console.log(err));
   }, [id]);
@@ -31,24 +31,24 @@ const UpdateSpeakerComponent = () => {
     event.preventDefault();
 
     const speaker = {
-        name: speakerName,
-        manufacturer: speakerManufacturer,
-        model: speakerModel,
-        batteryCapacity: speakerBatteryCapacity,
-        useCondition: speakerUseCondition,
-        releaseDate: speakerReleaseDate,
-      };
+      name: speakerName,
+      manufacturer: speakerManufacturer,
+      model: speakerModel,
+      batteryCapacity: speakerBatteryCapacity,
+      uuseCondition: speakerUseCondition,
+      releaseDate: speakerReleaseDate,
+    };
 
     speakerService
       .updateSpeaker(speaker, id)
       .then(() => {
-        navigate("/phone-getall");
+        navigate("/speaker-getall");
       })
       .catch((err) => console.log(err));
   };
 
   const cancel = () => {
-    navigate("/phone-getall");
+    navigate("/speaker-getall");
   };
 
   return (
@@ -59,7 +59,7 @@ const UpdateSpeakerComponent = () => {
             <h3 className="text-center"> Update Speaker</h3>
             <div className="card-body">
               <form onSubmit={updateSpeaker}>
-              <div className="form-group">
+                <div className="form-group">
                   <label>Speaker Name: </label>
                   <input
                     placeholder="Speaker name"
@@ -106,7 +106,7 @@ const UpdateSpeakerComponent = () => {
                 <div className="form-group">
                   <label>Speaker use conidtion: </label>
                   <input
-                    placeholder="Speaker use conidtion"
+                    placeholder="Speaker use condition"
                     name="speakerUseCondition"
                     className="form-control"
                     value={speakerUseCondition}

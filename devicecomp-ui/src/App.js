@@ -15,6 +15,10 @@ import UpdatePhoneComponent from "./Components/Phones/UpdatePhoneComponent";
 import PhoneListComponent from "./Components/Phones/PhoneListComponent";
 import ReccomendPhonesComponent from "./Components/Phones/RecommendPhoneComponent";
 import RecommendPhoneExecuterComponent from "./Components/Phones/RecommendPhoneExecuterComponent";
+import SpeakerListComponent from "./Components/Speakers/SpeakerListComponent";
+import CreateSpeakerComponent from "./Components/Speakers/CreateSpeakerComponent";
+import UpdateSpeakerComponent from "./Components/Speakers/UpdateSpeakerComponent";
+import DeleteSpeakerComponent from "./Components/Speakers/DeleteSpeakerComponent";
 
 function App() {
   return (
@@ -64,6 +68,27 @@ function App() {
             />
 
             {/* Phone based routes */}
+
+            {/* Speaker based routes */}
+            <Route path="/speaker-getall" element={<SpeakerListComponent />} />
+            <Route path="/speaker-add" element={<CreateSpeakerComponent />} />
+            <Route
+              path="/speaker-edit/:id"
+              element={<UpdateSpeakerComponent />}
+            />
+            <Route
+              path="/speaker-delete/:id"
+              element={<DeleteSpeakerComponent />}
+            />
+            <Route
+              path="/speaker-recommend"
+              element={<ReccomendPhonesComponent />}
+            />
+            <Route
+              path="/speaker-recommend-exc/:condition/:price/:storage"
+              element={<RecommendPhoneExecuterComponent />}
+            />
+            {/* Speaker based routes */}
           </Routes>
         </div>
         <FoooterComponent />

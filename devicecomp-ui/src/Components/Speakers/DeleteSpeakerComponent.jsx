@@ -1,36 +1,35 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import phoneService from "../../Services/PhoneService";
+import speakerService from "../../Services/SpeakerService";
 
 const DeleteSpeakerComponent = () => {
-    const [speakerName, setSpeakerName] = useState("");
-    const [speakerManufacturer, setSpeakerManufacturer] = useState("");
-    const [speakerModel, setSpeakerModel] = useState("");
-    const [speakerBatteryCapacity, setSpeakerBatteryCapacity] = useState("");
-    const [speakerUseCondition, setSpeakerUseCondition] = useState("");
-    const [speakerReleaseDate, setSpeakerReleaseDate] = useState("");
-    const navigate = useNavigate();
-    const { id } = useParams();
+  const [speakerName, setSpeakerName] = useState("");
+  const [speakerManufacturer, setSpeakerManufacturer] = useState("");
+  const [speakerModel, setSpeakerModel] = useState("");
+  const [speakerBatteryCapacity, setSpeakerBatteryCapacity] = useState("");
+  const [speakerUseCondition, setSpeakerUseCondition] = useState("");
+  const [speakerReleaseDate, setSpeakerReleaseDate] = useState("");
+  const navigate = useNavigate();
+  const { id } = useParams();
 
-    useEffect(() => {
-        speakerService
-          .getById(id)
-          .then((phone) => {
-            setSpeakerName(phone.data.name);
-            setSpeakerManufacturer(phone.data.storage);
-            setSpeakerManufacturer(phone.data.manufacturer);
-            setSpeakerModel(phone.data.model);
-            setSpeakerBatteryCapacity(phone.data.batteryCapacity);
-            setSpeakerUseCondition(phone.data.useCondition);
-            setSpeakerReleaseDate(phone.data.releaseDate);
-          })
-          .catch((err) => console.log(err));
-      }, [id]);
+  useEffect(() => {
+    speakerService
+      .getById(id)
+      .then((phone) => {
+        setSpeakerName(phone.data.name);
+        setSpeakerManufacturer(phone.data.storage);
+        setSpeakerManufacturer(phone.data.manufacturer);
+        setSpeakerModel(phone.data.model);
+        setSpeakerBatteryCapacity(phone.data.batteryCapacity);
+        setSpeakerUseCondition(phone.data.useCondition);
+        setSpeakerReleaseDate(phone.data.releaseDate);
+      })
+      .catch((err) => console.log(err));
+  }, [id]);
 
-      
   const deleteSpeaker = (event) => {
     event.preventDefault();
-   speakerService.deletepSpeaker(id).then(() => {
+    speakerService.deletepSpeaker(id).then(() => {
       navigate("/phone-getall");
     });
   };

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import phoneService from "../../Services/PhoneService";
+import speakerService from "../../Services/SpeakerService";
 
 const CreateSpeakerComponent = () => {
   const [speakerName, setSpeakerName] = useState("");
@@ -111,7 +111,7 @@ const CreateSpeakerComponent = () => {
                     }
                   />
                 </div>
-                <button className="btn btn-success" onClick={savePhone}>
+                <button className="btn btn-success" onClick={saveSpeaker}>
                   Save
                 </button>
                 <button

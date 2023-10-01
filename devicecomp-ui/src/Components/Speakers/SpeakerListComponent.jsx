@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import phoneService from "../../Services/PhoneService";
+import speakerService from "../../Services/SpeakerService";
 
 const SpeakerListComponent = () => {
   const [speaker, setSpeaker] = useState([]);
@@ -8,19 +8,19 @@ const SpeakerListComponent = () => {
   const rowRef = useRef();
 
   const addSpeakers = () => {
-    navigate("/phone-add");
+    navigate("/speaker-add");
   };
 
   const editSpeakers = (id) => {
-    navigate(`/phone-edit/${id}`);
+    navigate(`/speaker-edit/${id}`);
   };
 
   const deleteSpeakers = (id) => {
-    navigate(`/phone-delete/${id}`);
+    navigate(`/speaker-delete/${id}`);
   };
 
   const getRecs = () => {
-    navigate("/phone-recommend");
+    navigate("/speaker-recommend");
   };
 
   const exit = () => {
@@ -67,12 +67,12 @@ const SpeakerListComponent = () => {
           <tbody>
             {speaker.map((speaker) => (
               <tr key={speaker.id} ref={rowRef}>
-                <td>{speakerName}</td>
-                <td>{speakerManufacturer}</td>
-                <td>{speakerModel}</td>
-                <td>{speakerBatteryCapacity}</td>
-                <td>{speakerUseCondition}</td>
-                <td>{speakerReleaseDate}</td>
+                <td>{speaker.name}</td>
+                <td>{speaker.manufacturer}</td>
+                <td>{speaker.model}</td>
+                <td>{speaker.batteryCapacity}</td>
+                <td>{speaker.useCondition}</td>
+                <td>{speaker.releaseDate}</td>
                 <td>
                   <button
                     onClick={() => editSpeakers(speaker.id)}
