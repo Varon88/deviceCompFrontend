@@ -35,7 +35,7 @@ const UpdateSpeakerComponent = () => {
       manufacturer: speakerManufacturer,
       model: speakerModel,
       batteryCapacity: speakerBatteryCapacity,
-      uuseCondition: speakerUseCondition,
+      useCondition: speakerUseCondition,
       releaseDate: speakerReleaseDate,
     };
 

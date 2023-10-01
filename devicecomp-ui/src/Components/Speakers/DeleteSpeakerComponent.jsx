@@ -29,7 +29,7 @@ const DeleteSpeakerComponent = () => {
 
   const deleteSpeaker = (event) => {
     event.preventDefault();
-    speakerService.deletepSpeaker(id).then(() => {
+    speakerService.deleteSpeaker(id).then(() => {
       navigate("/speaker-getall");
     });
   };

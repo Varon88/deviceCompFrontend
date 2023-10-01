@@ -19,6 +19,8 @@ import SpeakerListComponent from "./Components/Speakers/SpeakerListComponent";
 import CreateSpeakerComponent from "./Components/Speakers/CreateSpeakerComponent";
 import UpdateSpeakerComponent from "./Components/Speakers/UpdateSpeakerComponent";
 import DeleteSpeakerComponent from "./Components/Speakers/DeleteSpeakerComponent";
+import ReccomendSpeakerComponent from "./Components/Speakers/RecommendSpeakersComponent";
+import RecommendSpeakerExecuterComponent from "./Components/Speakers/RecommendSpeakerExecuterComponent";
 
 function App() {
   return (
@@ -82,11 +84,11 @@ function App() {
             />
             <Route
               path="/speaker-recommend"
-              element={<ReccomendPhonesComponent />}
+              element={<ReccomendSpeakerComponent />}
             />
             <Route
-              path="/speaker-recommend-exc/:condition/:price/:storage"
-              element={<RecommendPhoneExecuterComponent />}
+              path="/speaker-recommend-exc/:condition/:batteryCapacity"
+              element={<RecommendSpeakerExecuterComponent />}
             />
             {/* Speaker based routes */}
           </Routes>

@@ -24,7 +24,7 @@ const CreateSpeakerComponent = () => {
     };
 
     speakerService
-      .createSpeakers(speaker)
+      .createSpeaker(speaker)
       .then(() => {
         navigate("/speaker-getall");
       })
