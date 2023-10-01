@@ -26,13 +26,13 @@ const CreateSpeakerComponent = () => {
     speakerService
       .createSpeakers(speaker)
       .then(() => {
-        navigate("/phone-getall");
+        navigate("/speaker-getall");
       })
       .catch((err) => console.log(err));
   };
 
   const cancel = () => {
-    navigate("/phone-getall");
+    navigate("/speaker-getall");
   };
 
   return (

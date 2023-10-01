@@ -30,12 +30,12 @@ const DeleteSpeakerComponent = () => {
   const deleteSpeaker = (event) => {
     event.preventDefault();
     speakerService.deletepSpeaker(id).then(() => {
-      navigate("/phone-getall");
+      navigate("/speaker-getall");
     });
   };
 
   const cancel = () => {
-    navigate("/phone-getall");
+    navigate("/speaker-getall");
   };
 
   return (
